@@ -1,4 +1,3 @@
-
 .titulo{
   margin-top: 3rem;
   margin-bottom: 2rem;
@@ -7,7 +6,7 @@
 .texto{
   font-size: medium;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid blue;
   padding:1rem;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -20,6 +19,7 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
   text-align: justify;
+  padding:1rem;
 }
 .card{
   margin-top: 3rem;
