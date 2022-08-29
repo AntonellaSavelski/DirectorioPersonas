@@ -1,16 +1,20 @@
 import Personas from "../Personas";
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const ListaPersonas = () => {
     const nombres = []
 
     Personas.forEach(persona => {
-        nombres.push(<h2 className='texto'> <b>Persona:</b> {persona.nombre}</h2>)
+        nombres.push(<Col className='texto' xs={6} md={4} >{persona.nombre} {persona.apellido}</Col>)
     })
     return (
-        <div className="lista">
-            {nombres}
-        </div>
+        <Container className="lista">
+            <Row>
+                {nombres}
+            </Row>
+        </Container>
     );
 };
 export default ListaPersonas;

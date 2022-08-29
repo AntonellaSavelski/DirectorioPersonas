@@ -2,6 +2,7 @@ import Layout from "../Layout";
 import { useState, useEffect } from "react";
 import Personas from "../Personas";
 import Button from "react-bootstrap/esm/Button";
+import Container from "react-bootstrap/esm/Container";
 
 const Estadisticas = () => {
     const [info, setInfo] = useState({
@@ -15,8 +16,8 @@ const Estadisticas = () => {
     const recargar = () => {
         const personasAModificar = { ...info }
         Personas.forEach(persona => {
-            if (persona.edad > 35) {
-                personasAModificar.mayores35 = personasAModificar.mayores35 +1
+            if (persona.edad >= 35) {
+                personasAModificar.mayores35 = personasAModificar.mayores35 + 1
             }
             if (persona.edad > personasAModificar.edadMayor) {
                 personasAModificar.edadMayor = `${persona.edad} `
@@ -38,23 +39,26 @@ const Estadisticas = () => {
     }
     useEffect(() => {
         recargar()
-      }, [])
-        
+    }, [])
+
     return (
         <div >
             <Layout />
-            <div className="row col-12">
-                <div className="col-md-4"></div>
-                <div className="col-md-4 ">
-                    <div className="card">
-                        <p><b>Cantidad de personas mayores a 35 años: {info.mayores35}</b></p>
-                        <p><b>Persona/s de mayor edad: {info.personaMayor}</b></p>
-                        <p><b>Persona/s de menor edad: {info.personaMenor}</b></p>
-                        <Button variant="primary" href="/Home">Volver a la página principal</Button>
+            <Container>
+                <h1 className="titulo">Estadisticas generales</h1>
+                <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4 ">
+                        <div className="card">
+                            <p><b>Cantidad de personas mayores a 35 años: {info.mayores35}</b></p>
+                            <p><b>Persona/s de mayor edad: {info.personaMayor}</b></p>
+                            <p><b>Persona/s de menor edad: {info.personaMenor}</b></p>
+                            <Button variant="primary" href="/Home">Volver a la página principal</Button>
+                        </div>
                     </div>
+                    <div className="col-md-4"></div>
                 </div>
-                <div className="col-md-4"></div>
-            </div>
+            </Container>
         </div>
     );
 };

@@ -6,18 +6,18 @@
 .texto{
   font-size: medium;
   justify-content: center;
-  border: 1px solid blue;
+  border-right: 0.5rem solid white;
+  border-left: 0.5rem solid white;
   padding:1rem;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
   color: black;
   background-color: aqua;
-  font-weight:normal
+  font-weight:normal,
 }
 .lista{
   align-items: center;
   margin-top: 3rem;
-  margin-bottom: 3rem;
   text-align: justify;
   padding:1rem;
 }

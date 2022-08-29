@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Layout from "../Layout";
 import Personas from "../Personas";
 import Button from 'react-bootstrap/Button';
+import Container from "react-bootstrap/esm/Container";
 
 
 const Persona = () => {
@@ -11,11 +12,12 @@ const Persona = () => {
     return (
         <div >
             <Layout />
-            <div className="row col-12">
+            <Container>
+            <h1 className="titulo">Persona cuyo identificador es: {personaId}</h1>
+            <div className="row">
                 <div className="col-md-4"></div>
-                <div className="col-md-4" >
+                <div className="col-md-4 prueba" >
                     <div className="card">
-                        <p><b>Id persona: </b>{personaId}</p>
                         <p><b>Nombre: </b>{ind.nombre}</p>
                         <p><b>Apellido: </b>{ind.apellido}</p>
                         <p><b>Email: </b>{ind.email}</p>
@@ -23,9 +25,10 @@ const Persona = () => {
                         <Button variant="primary" href="/Home">Volver atras</Button>
                     </div>
                 </div>
-                <div className="col-md-4"></div>
+                
 
             </div>
+            </Container>
         </div>
     );
 };
