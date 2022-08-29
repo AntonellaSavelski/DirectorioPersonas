@@ -419,6 +419,13 @@ const Personas = [
     "email":"rkilmary1n@businessinsider.com",
     "edad":"48"
   },
+  {
+    "id":"61",
+    "nombre":"Anto",
+    "apellido":"aaaa",
+    "email":"aaa",
+    "edad":"65"
+  },
 ];
 
 export default Personas;

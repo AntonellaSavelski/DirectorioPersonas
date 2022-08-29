@@ -8,12 +8,12 @@ const Estadisticas = () => {
         mayores35: 0,
         edadMayor: '',
         personaMayor: '',
-        edadMenor: '',
+        edadMenor: 100,
         personaMenor: '',
     });
 
     const recargar = () => {
-        const personasAModificar = info
+        const personasAModificar = { ...info }
         Personas.forEach(persona => {
             if (persona.edad > 35) {
                 personasAModificar.mayores35 = personasAModificar.mayores35 +1
@@ -32,8 +32,9 @@ const Estadisticas = () => {
             else if (persona.edad === personasAModificar.edadMenor) {
                 personasAModificar.personaMenor = `${personasAModificar.personaMenor}, ${persona.nombre} `
             }
-            setInfo(personasAModificar)
+            console.log(personasAModificar)
         })
+        setInfo(personasAModificar)
     }
     useEffect(() => {
         recargar()

@@ -1,5 +1,6 @@
 import Personas from "../Personas";
 
+
 const ListaPersonas = () => {
     const nombres = []
 
