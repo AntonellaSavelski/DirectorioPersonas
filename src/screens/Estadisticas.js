@@ -7,7 +7,7 @@ import Container from "react-bootstrap/esm/Container";
 const Estadisticas = () => {
     const [info, setInfo] = useState({
         mayores35: 0,
-        edadMayor: '',
+        edadMayor: 0,
         personaMayor: '',
         edadMenor: 100,
         personaMenor: '',
@@ -20,18 +20,18 @@ const Estadisticas = () => {
                 personasAModificar.mayores35 = personasAModificar.mayores35 + 1
             }
             if (persona.edad > personasAModificar.edadMayor) {
-                personasAModificar.edadMayor = `${persona.edad} `
-                personasAModificar.personaMayor = `${persona.nombre} `
+                personasAModificar.edadMayor = persona.edad
+                personasAModificar.personaMayor = `${persona.nombre}`
             }
             else if (persona.edad === personasAModificar.edadMayor) {
-                personasAModificar.personaMayor = `${personasAModificar.personaMayor}, ${persona.nombre} `
+                personasAModificar.personaMayor = `${personasAModificar.personaMayor}, ${persona.nombre}`
             }
             if (persona.edad < personasAModificar.edadMenor) {
-                personasAModificar.edadMenor = `${persona.edad} `
-                personasAModificar.personaMenor = `${persona.nombre} `
+                personasAModificar.edadMenor = persona.edad
+                personasAModificar.personaMenor = `${persona.nombre}`
             }
             else if (persona.edad === personasAModificar.edadMenor) {
-                personasAModificar.personaMenor = `${personasAModificar.personaMenor}, ${persona.nombre} `
+                personasAModificar.personaMenor = `${personasAModificar.personaMenor}, ${persona.nombre}`
             }
             console.log(personasAModificar)
         })
